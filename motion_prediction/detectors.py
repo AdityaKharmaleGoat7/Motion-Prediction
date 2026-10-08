@@ -33,7 +33,7 @@ class BallDetector:
 
 class HaarDetector:
     def __init__(self, cascade=None):
-        path = Path(cascade) if cascade else Path(cv2.data.haarcascades) / "haarcascade_fullbody.xml"
+        path = Path(cascade) if cascade else Path(__file__).parent / "assets" / "haarcascade_fullbody.xml"
         if not path.is_file():
             raise FileNotFoundError(f"Haar cascade does not exist: {path}")
         self.cascade = cv2.CascadeClassifier(str(path))

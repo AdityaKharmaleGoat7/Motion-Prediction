@@ -24,3 +24,6 @@ include = ["motion_prediction*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.setuptools.package-data]
+motion_prediction = ["assets/*.xml"]
