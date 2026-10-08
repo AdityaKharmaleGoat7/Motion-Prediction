@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "motion-prediction"
+version = "0.1.0"
+description = "OpenCV object detection and Kalman motion prediction for video"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Aditya Kharmale"}]
+dependencies = ["numpy>=1.24,<3", "opencv-python>=4.8,<5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+notebooks = ["jupyterlab>=4,<5"]
+
+[project.scripts]
+motion-prediction = "motion_prediction.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["motion_prediction*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
