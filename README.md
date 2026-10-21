@@ -61,6 +61,13 @@ python -m motion_prediction --detector balls --camera 0
 
 The installed `motion-prediction` command accepts the same options. Press `q` to stop an interactive run. Use `python -m motion_prediction --help` for all options. On Linux, interactive display requires a desktop session and OpenCV system libraries such as `libGL`. For servers, use `--no-display`.
 
+## Troubleshooting
+
+- **No display / GUI error:** run with `--no-display`, especially on SSH sessions, containers, and headless servers.
+- **Video cannot be opened:** verify the path exists and that OpenCV can decode the file. Try an absolute path if a relative path fails.
+- **YOLO detector fails to start:** supply compatible YOLOv3 `.cfg` and `.weights` files with `--config` and `--weights`; these model files are not bundled with the repository.
+- **Camera does not open:** check that the device index passed to `--camera` is correct and that no other application is using the camera.
+
 ## Repository layout
 
 | Path | Purpose |
